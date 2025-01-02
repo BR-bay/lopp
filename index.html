@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinta Tak Terhingga</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdf2f8;
+            color: #3d3d3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            position: relative;
+        }
+        .container h1 {
+            color: #e63946;
+            font-size: 2.5rem;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 2s;
+        }
+        .slide.active {
+            display: block;
+        }
+        .gif {
+            margin: 20px 0;
+        }
+        .gif img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .btn-next {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .btn-next:hover {
+            background: #d62839;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cinta Tak Terhingga</h1>
+        
+        <div class="slide active">
+            <p>"Apri Jonita Yenda, aku mencintaimu lebih dari yang bisa diungkapkan oleh kata-kata. Setiap hari bersamamu adalah anugerah, dan aku, Bayu Ramazandi, bersumpah untuk mencintaimu dengan sepenuh hati, hari ini, esok, dan selamanya."</p>
+        </div>
+        <div class="slide">
+            <p>"Enda, kebahagiaanmu adalah kebahagiaanku. Aku akan melakukan apa pun untuk melihat senyummu dan memastikan bahwa kamu merasakan cinta dan kehangatan di setiap langkah kehidupan kita bersama."</p>
+        </div>
+        <div class="slide">
+            <p>"Aku akan terus memperjuangkanmu, Enda. Tidak peduli seberapa berat rintangan yang ada, aku akan selalu berada di sisimu, menggenggam tanganmu, dan memastikan bahwa kita melewati semuanya bersama-sama."</p>
+        </div>
+        <div class="slide">
+            <p>"Aku ingin menjadikanmu istriku, Enda. Aku ingin berdiri di hadapan Tuhan dan semua orang yang kita cintai untuk berjanji bahwa aku akan selalu mencintai, menghormati, dan membahagiakanmu hingga akhir hayatku."</p>
+        </div>
+        <div class="slide">
+            <p>"Enda, aku ingin kamu menjadi wanita paling bahagia di dunia. Aku ingin memberikan segala hal terbaik yang aku miliki untukmu, karena kamu layak mendapatkan segalanya. Kamu adalah duniaku, dan aku ingin membangun masa depan indah bersamamu."</p>
+        </div>
+        <div class="gif">
+            <img src="https://media1.tenor.com/m/uYzpJPlXq2sAAAAC/lovelovelove.gif" alt="Lucu Animasi GIF">
+        </div>
+        <a href="#" class="btn-next">Baca Selanjutnya</a>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.querySelector('.btn-next');
+        let currentSlide = 0;
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        });
+    </script>
+</body>
+</html>
